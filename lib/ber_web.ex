@@ -22,7 +22,7 @@ defmodule BerWeb do
       use Phoenix.Controller, namespace: BerWeb
 
       import Plug.Conn
-      import BerWeb.Gettext
+      use Gettext, backend: BerWeb.Gettext
       alias BerWeb.Router.Helpers, as: Routes
     end
   end
@@ -80,7 +80,7 @@ defmodule BerWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import BerWeb.Gettext
+      use Gettext, backend: BerWeb.Gettext
     end
   end
 
@@ -96,7 +96,7 @@ defmodule BerWeb do
       import Phoenix.View
 
       import BerWeb.ErrorHelpers
-      import BerWeb.Gettext
+      use Gettext, backend: BerWeb.Gettext
       alias BerWeb.Router.Helpers, as: Routes
     end
   end
