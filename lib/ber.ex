@@ -29,9 +29,9 @@ defmodule Ber do
         icon: "twitter"
       },
       %{
-        name: "Twitch",
-        url: "https://www.twitch.tv/bdornellas",
-        icon: "twitch"
+        name: "YouTube",
+        url: "https://www.youtube.com/@BernardoBits",
+        icon: "youtube"
       },
       %{
         name: "Telegram",
