@@ -1,0 +1,40 @@
+<div class="container mx-auto max-w-lg px-2">
+  <h1 class="text-4xl text-center my-10 mx-2">Bernardo Amorim</h1>
+  <img
+    src="https://github.com/bamorim.png"
+    alt="Photo of Bernardo Amorim"
+    class="w-64 rounded-full border-2 border-gray-400 mx-auto my-10 aspect-square"
+  />
+  <section class="my-10">
+    <h1 class="text-xl my-5">Links</h1>
+    <ul class="grid grid-cols-2 gap-2 xs:grid-cols-3">
+      <li :for={link <- @links}>
+        <a
+          href={link.url}
+          target={if link.external, do: "_blank"}
+          class="block bg-white rounded-md p-2 border-2 border-gray-400 hover:bg-gray-100 text-lg dark:bg-gray-800 dark:hover:bg-gray-700"
+        >
+          <i class={"ri-#{link.icon}-fill align-bottom"} />
+          <span>{link.name}</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="my-10">
+    <h1 class="text-xl my-5">About Me</h1>
+    <p class="my-2">
+      I'm a software engineer interested in developer productivity and tooling, programming
+      languages in general (especially functional ones) and learning (both for myself but also
+      for others).
+    </p>
+    <p class="my-2">
+      I've been writing Elixir since 2017 and got involved (and in love) with the community
+      through meetups and giving talks at events. Lately I've also been writing a lot of
+      TypeScript and Go, and these days I'm a founding engineer at an early-stage startup.
+    </p>
+    <p class="my-2">
+      Apart from that, I'm a huge fan of Counter-Strike and used to play handball for the
+      university team.
+    </p>
+  </section>
+</div>

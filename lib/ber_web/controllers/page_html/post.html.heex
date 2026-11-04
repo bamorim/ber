@@ -1,0 +1,10 @@
+<div class="container mx-auto max-w-2xl px-4 pb-16">
+  <.link href={~p"/blog"} class="block my-10 hover:underline">← Blog</.link>
+  <article class="prose dark:prose-invert prose-pre:text-sm prose-code:before:content-none prose-code:after:content-none">
+    <h1 class="mb-2">{@post.title}</h1>
+    <time class="block text-sm text-gray-600 dark:text-gray-400" datetime={@post.date}>
+      {format_date(@post.date)}
+    </time>
+    {raw(@post.body)}
+  </article>
+</div>

@@ -1,0 +1,12 @@
+<div class="container mx-auto max-w-lg px-2">
+  <.link href={~p"/"} class="block my-10 hover:underline">← Bernardo Amorim</.link>
+  <h1 class="text-4xl my-10">Blog</h1>
+  <ul class="space-y-6">
+    <li :for={post <- @posts}>
+      <.link href={~p"/blog/#{post.id}"} class="text-xl hover:underline">{post.title}</.link>
+      <time class="block text-sm text-gray-600 dark:text-gray-400" datetime={post.date}>
+        {format_date(post.date)}
+      </time>
+    </li>
+  </ul>
+</div>

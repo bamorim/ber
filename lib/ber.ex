@@ -7,7 +7,8 @@ defmodule Ber do
   @type link() :: %{
           name: String.t(),
           url: String.t(),
-          icon: String.t()
+          icon: String.t(),
+          external: boolean()
         }
 
   @spec get_links() :: [link()]
@@ -40,9 +41,10 @@ defmodule Ber do
       },
       %{
         name: "Blog",
-        url: "https://listed.to/@bamorim"
+        url: "/blog",
+        icon: "article"
       }
     ]
-    |> Enum.map(&Map.put_new(&1, :icon, "external-link"))
+    |> Enum.map(&Map.put(&1, :external, String.starts_with?(&1.url, "http")))
   end
 end

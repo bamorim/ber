@@ -24,8 +24,6 @@ defmodule BerWeb.ConnCase do
       import Phoenix.ConnTest
       import BerWeb.ConnCase
 
-      alias BerWeb.Router.Helpers, as: Routes
-
       # The default endpoint for testing
       @endpoint BerWeb.Endpoint
     end
