@@ -12,14 +12,14 @@
 #   - https://pkgs.org/ - resource for finding needed packages
 #   - Ex: hexpm/elixir:1.13.4-erlang-25.0-debian-bullseye-20210902-slim
 #
-ARG ELIXIR_VERSION=1.19.2
-ARG OTP_VERSION=28.1
-ARG DEBIAN_VERSION=trixie-20251103-slim
+ARG ELIXIR_VERSION=1.20.5
+ARG OTP_VERSION=29.1.2
+ARG DEBIAN_VERSION=trixie-20261027-slim
 
 ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
 ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
 
-FROM ${BUILDER_IMAGE} as builder
+FROM ${BUILDER_IMAGE} AS builder
 
 # install build dependencies
 RUN apt-get update -y && apt-get install -y build-essential git \
@@ -91,5 +91,4 @@ USER nobody
 
 CMD ["/app/bin/server"]
 # Appended by flyctl
-ENV ECTO_IPV6 true
 ENV ERL_AFLAGS "-proto_dist inet6_tcp"
